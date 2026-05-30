@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span> AI-powered speech coaching</span>
+      <h1>Speak with <span class="grad">confidence</span>, backed by data.</h1>
+      <p class="lead">
+        {{ app_name }} transcribes your speech, detects filler words, measures your pace,
+        and delivers a personalised AI report card — so every talk you give is sharper than the last.
+      </p>
+      <div class="hero-cta">
+        <a href="/register" class="btn btn-primary btn-lg">Start free analysis</a>
+        <a href="#" class="btn btn-ghost btn-lg" id="guestCta">Continue as guest</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>Whisper</strong><span>Speech-to-text engine</span></div>
+        <div class="stat"><strong>3 metrics</strong><span>Linguistic analysis</span></div>
+        <div class="stat"><strong>Gemini</strong><span>AI coaching insights</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hc-top">
+          <h3>Speech Report Card</h3>
+          <span class="tag good">Fluent</span>
+        </div>
+        <div class="score-ring">
+          <svg width="96" height="96">
+            <circle cx="48" cy="48" r="42" stroke="rgba(255,255,255,.08)" stroke-width="8" fill="none"/>
+            <circle cx="48" cy="48" r="42" stroke="url(#hg)" stroke-width="8" fill="none"
+              stroke-dasharray="264" stroke-dashoffset="40" stroke-linecap="round"/>
+            <defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#d946ef"/></linearGradient></defs>
+          </svg>
+          <div class="ring-val"><b>85</b><span>/ 100</span></div>
+        </div>
+        <div class="hc-metric"><span class="label">Words per minute</span><span class="val">142 WPM</span></div>
+        <div class="hc-metric"><span class="label">Filler words</span><span class="val">7 <span class="tag warn">umm ×3</span></span></div>
+        <div class="hc-metric"><span class="label">Vocabulary diversity</span><span class="val">0.58</span></div>
+        <div class="hc-metric"><span class="label">Confidence</span><span class="val">High</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Features</span>
+      <h2>Everything you need to improve</h2>
+      <p>A complete coaching pipeline that turns raw audio into actionable feedback.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></svg></div>
+        <h3>Whisper transcription</h3>
+        <p>Accurate speech-to-text powered by OpenAI Whisper, handling natural speech, accents and pauses.</p>
+      </div>
+      <div class="feature">
+        <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 2 4-6"/></svg></div>
+        <h3>Filler word detection</h3>
+        <p>Automatically spots "umm", "uh", "like", "you know" and more — with a per-word breakdown.</p>
+      </div>
+      <div class="feature">
+        <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Pace &amp; WPM analysis</h3>
+        <p>Measures your speaking rate against the ideal range so you never rush or drag.</p>
+      </div>
+      <div class="feature">
+        <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2 5 5 .5-4 3.5 1.5 5L12 18l-4.5 3 1.5-5-4-3.5 5-.5z"/></svg></div>
+        <h3>Fluency scoring</h3>
+        <p>A 0–100 fluency score combining pace, fillers and vocabulary diversity into one clear number.</p>
+      </div>
+      <div class="feature">
+        <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>AI coaching insights</h3>
+        <p>Gemini generates strengths, improvements and concrete tips tailored to your delivery.</p>
+      </div>
+      <div class="feature">
+        <div class="ficon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+        <h3>Structured report cards</h3>
+        <p>Every analysis is saved as a clean JSON report you can revisit, track and compare over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">How it works</span>
+      <h2>From audio to insights in four steps</h2>
+      <p>A fully automated pipeline runs the moment you upload a recording.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Upload audio</h3><p>Drop in an MP3, WAV or M4A recording of your talk or practice session.</p></div>
+      <div class="step"><div class="num">2</div><h3>Transcribe</h3><p>Whisper converts your speech into an accurate, timestamped transcript.</p></div>
+      <div class="step"><div class="num">3</div><h3>Analyse</h3><p>Our engine computes WPM, filler rate and vocabulary diversity in Python.</p></div>
+      <div class="step"><div class="num">4</div><h3>Get coached</h3><p>Gemini turns the metrics into a personalised report card with actionable tips.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="metrics" class="metrics-band">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Linguistic metrics</span>
+      <h2>Three signals that define great speaking</h2>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="big">130–160</div><h3>Words per minute</h3><p>The ideal conversational pace that keeps audiences engaged without losing clarity.</p></div>
+      <div class="metric-card"><div class="big">&lt; 3/min</div><h3>Filler rate</h3><p>Keeping crutch words low signals confidence and command of your material.</p></div>
+      <div class="metric-card"><div class="big">0.6+</div><h3>Vocabulary diversity</h3><p>A healthy type-token ratio shows rich, varied language that holds attention.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>Ready to find your vocal vantage?</h2>
+      <p>Upload your first recording and get a full AI report card in under a minute.</p>
+      <a href="/register" class="btn btn-primary btn-lg">Create free account</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+  document.getElementById('guestCta')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    VV.continueAsGuest();
+  });
+</script>
+{% endblock %}

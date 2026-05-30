@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — {{ app_name }}{% endblock %}
+{% block content %}
+<div class="container dash">
+  <div class="dash-head">
+    <div>
+      <h1>Your dashboard <span class="badge-guest" id="guestBadge" style="display:none">Guest mode</span></h1>
+      <p id="welcomeLine">Upload a recording to get your AI speech report card.</p>
+    </div>
+    <button class="btn btn-ghost" id="logoutBtn">Sign out</button>
+  </div>
+
+  <label class="upload-zone" id="uploadZone" for="fileInput">
+    <div class="up-icon">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5M12 3v12"/></svg>
+    </div>
+    <h3>Drop your audio file here</h3>
+    <p>or click to browse — MP3, WAV, M4A, WEBM, OGG, FLAC</p>
+    <p class="hint">Max 25 MB. We transcribe, analyse and generate your report automatically.</p>
+    <input type="file" id="fileInput" accept="audio/*,.mp3,.wav,.m4a,.webm,.ogg,.flac,.mp4" hidden />
+  </label>
+
+  <div class="progress-box" id="progressBox">
+    <div class="progress-steps">
+      <div class="pstep" data-step="upload"><span class="pdot"></span> Uploading audio…</div>
+      <div class="pstep" data-step="transcribe"><span class="pdot"></span> Transcribing with Whisper…</div>
+      <div class="pstep" data-step="analyze"><span class="pdot"></span> Analysing linguistic metrics…</div>
+      <div class="pstep" data-step="feedback"><span class="pdot"></span> Generating AI report card…</div>
+    </div>
+  </div>
+
+  <div class="history">
+    <h2>Recent analyses</h2>
+    <div class="analysis-list" id="analysisList">
+      <div class="empty-state">Loading…</div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/dashboard.js"></script>
+{% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{{ app_name }} — AI Public Speaking Coach{% endblock %}</title>
+  <meta name="description" content="{{ app_name }} analyses your speech with AI: transcription, filler-word detection, pace and fluency scoring with personalised coaching." />
+  <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2z" fill="url(#g1)"/>
+            <path d="M18.5 14l.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9.9-2.4z" fill="url(#g1)"/>
+            <defs><linearGradient id="g1" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#d946ef"/></linearGradient></defs>
+          </svg>
+        </span>
+        <span class="brand-name">{{ app_name }}</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="/#features">Features</a>
+        <a href="/#how">How it Works</a>
+        <a href="/#metrics">Metrics</a>
+        <a href="/dashboard">Dashboard</a>
+      </nav>
+
+      <div class="header-actions" id="headerAuth">
+        <a href="/login" class="btn btn-ghost" data-auth="guest">Sign in</a>
+        <a href="/register" class="btn btn-primary" data-auth="guest">Get started</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "partials/footer.html" %}
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/static/js/app.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

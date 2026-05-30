@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Report — {{ app_name }}{% endblock %}
+{% block content %}
+<div class="container report" data-analysis-id="{{ analysis_id }}">
+  <div class="report-top">
+    <div>
+      <h1 id="reportTitle">Speech Report Card</h1>
+      <p class="meta" id="reportMeta">Loading analysis…</p>
+    </div>
+    <div class="report-actions">
+      <a href="/dashboard" class="btn btn-ghost">← Back</a>
+      <button class="btn btn-ghost" id="downloadJson">Download JSON</button>
+    </div>
+  </div>
+
+  <div id="reportBody">
+    <div class="report-grid">
+      <div class="card skeleton" style="height:280px"></div>
+      <div class="card skeleton" style="height:280px"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/report.js"></script>
+{% endblock %}
