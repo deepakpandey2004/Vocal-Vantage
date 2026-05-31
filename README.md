@@ -34,6 +34,8 @@ cloud deployment.
 
 ---
 
+Live URL    -----     https://vocal-vantage.onrender.com
+
 ## ✨ Features
 
 | Area | What it does |
